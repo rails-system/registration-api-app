@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgresql
+  pool: 8 
+  host: localhost
+  timeout: 5000
+
+development:
+  <<: *default
+  username: postgres
+  password: 12345678
+  encoding: utf8
+  database: dating_app_development
