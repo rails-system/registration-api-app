@@ -4,7 +4,11 @@ class Api::V1::RegistrationsController < Devise::RegistrationsController
   def create
     user = User.new(user_params)
     if user.save
-      UserNotifierMailer.send_signup_email(user).deliver_now
+      if user.email.present?
+        UserNotifierMailer.send_signup_email(user).deliver_now
+      else
+        MobileNotification.new(user).call
+      end  
       render status: 200, json: user, success: true
     else
       render json: { success: false, message: user.errors.full_messages }, status: 422
