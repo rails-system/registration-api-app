@@ -16,6 +16,6 @@ class User < ApplicationRecord
   end
 
   def self.added_temp_email(user,params)
-  	user.email = params[:user][:mobile_number].last(10)+"@yopmail.com" rescue nil
+  	user.email = Faker::Internet.email rescue nil
   end
 end
