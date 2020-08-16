@@ -231,12 +231,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
   devise
   faker
   jbuilder (~> 2.7)
+  jwt
   letter_opener
   listen (>= 3.0.5, < 3.2)
   pg
@@ -258,4 +260,4 @@ RUBY VERSION
    ruby 2.6.5p114
 
 BUNDLED WITH
-   2.1.4
+   1.17.3

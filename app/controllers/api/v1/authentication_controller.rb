@@ -1,5 +1,6 @@
 class Api::V1::AuthenticationController < Api::ApiController
   # api :post, '/api/v1/authentication/verify_otp'  params: [:email/mobile_number, otp]
+  skip_before_action :authenticate, only: [:create]
   def verify_otp
     if ( params[:email] || params[:mobile_number] ) && params[:verify_otp].present?
       user = User.where('email = ? or mobile_number = ?', params[:email], params[:mobile_number]).first rescue nil

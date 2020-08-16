@@ -25,10 +25,19 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-
+  # config.secret_key = '823e3344331224efe320ae5b74fdf2c3dda9e6646493648be9772c0d5bd2fc252c00cb1b24d5642d000f7e9cfbd1a68b648d2e144513a9dd849454e0524b69c0'
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
-
+  # config.jwt do |jwt|
+  #   # TODO: Assign this to environment variable before production deployment!
+  #   jwt.secret = '95c7927e9e801a1da049141eb3dbf972434465145d26e1ae05dc6a10ec4d409e530018e387ea9b1082d4bda2214533da98d92586e40b7fd25623783ef2f78520'
+  #   jwt.dispatch_requests = [
+  #       ['POST', %r{^/users/sign_in$}],
+  #       ['GET', %r{^/$}]
+  #   ]
+  #   jwt.request_formats = { user: [:json] }
+  #   jwt.expiration_time = 8.hours.to_i
+  # end
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'
 
